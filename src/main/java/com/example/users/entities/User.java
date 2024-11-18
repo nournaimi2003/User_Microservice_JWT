@@ -1,6 +1,9 @@
 package com.example.users.entities;
 
 import java.util.List;
+
+
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -27,6 +30,7 @@ public class User {
 	private String username;
 	private String password;
 	private Boolean enabled;
+	
 	
     @ManyToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinTable(name="user_role",joinColumns = @JoinColumn(name="user_id") , 
